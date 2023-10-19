@@ -43,7 +43,9 @@ const Home = () => {
 
   //render when diffrent stockId.
   useEffect(() => {
-    const socket = io("https://stock-backend-six.vercel.app"); // Replace with your server's URL
+    // const socket = io(api); // Replace with your server's URL\
+    var socket = io(api, { transports : ['websocket'] });
+
 
     const findCurrentStock = dropDownData.find((e) => e._id == stockId);
     setUpdateData({ ...findCurrentStock });
