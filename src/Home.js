@@ -45,7 +45,7 @@ const Home = () => {
   useEffect(() => {
     var options = {
       rememberUpgrade:true,
-      transports: ['websocket'],
+      transports: ['socket.io'],
       secure:true, 
       rejectUnauthorized: false
           }
