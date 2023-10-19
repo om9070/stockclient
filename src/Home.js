@@ -43,7 +43,7 @@ const Home = () => {
 
   //render when diffrent stockId.
   useEffect(() => {
-    const socket = io("https://stock-backend-sigma.vercel.app/"); // Replace with your server's URL
+    const socket = io("stock-backend-sigma.vercel.app"); // Replace with your server's URL
 
     const findCurrentStock = dropDownData.find((e) => e._id == stockId);
     setUpdateData({ ...findCurrentStock });
