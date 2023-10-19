@@ -44,7 +44,7 @@ const Home = () => {
   //render when diffrent stockId.
   useEffect(() => {
     // const socket = io(api); // Replace with your server's URL\
-    var socket = io(api, { transports : ['websocket'] });
+    var socket = io(api, { transports : ['websocket', 'polling', 'flashsocket'] });
 
 
     const findCurrentStock = dropDownData.find((e) => e._id == stockId);
