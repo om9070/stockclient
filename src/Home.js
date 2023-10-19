@@ -50,7 +50,7 @@ const Home = () => {
     //   rejectUnauthorized: false
     //       }
     // const socket = io(api); // Replace with your server's URL\
-    var socket = io(api,{transports: ['polling', 'websocket']});
+    var socket = io("wss://stock-backend-six.vercel.app/");
 
 
     const findCurrentStock = dropDownData.find((e) => e._id == stockId);
