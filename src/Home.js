@@ -11,6 +11,9 @@ const Home = () => {
   const [dropDownData, setdropDownData] = useState([]);
   const [stockId, setStockId] = useState("");
   const [updateData, setUpdateData] = useState({});
+  const [socket, setSocket] = useState()
+
+
 
   const getStockData = async () => {
     try {
@@ -38,13 +41,17 @@ const Home = () => {
 //intial event click
   useEffect(() => {
     getStockData();
+
+    var socket = io("wss://stock-backend-six.vercel.app");
+
+    setSocket(socket)
+
   }, []);
 
   
   //render when diffrent stockId.
   useEffect(() => {
    
-    var socket = io("wss://stock-backend-six.vercel.app");
 
 
     const findCurrentStock = dropDownData.find((e) => e._id == stockId);
